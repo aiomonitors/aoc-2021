@@ -20,14 +20,10 @@ const parseBoards = (): IBoards => {
   for (let i = 0; i < splitData.length; i += 1) {
     const lineVal = splitData[i];
 
-    try {
-      if (lineVal.length === 0) {
-        boards.push(currentBoard);
-        currentBoard = [];
-        i += 1;
-      }
-    } catch (err) {
-      console.log(err);
+    if (lineVal.length === 0) {
+      boards.push(currentBoard);
+      currentBoard = [];
+      i += 1;
     }
 
     const boardLine: IBoardLine = [];
